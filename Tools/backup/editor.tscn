@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://cbs4v8exb17hw"]
+
+[ext_resource type="Script" uid="uid://d2aljiy7vcbfe" path="res://editor.gd" id="1_wlowb"]
+
+[node name="Control" type="Control" unique_id=740641480]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wlowb")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=349509452]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -39.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 0.0
+step = 0.0
+editable = false
+scrollable = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1271728715]
+
+[node name="new_song" type="Button" parent="." unique_id=736669266]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.0
+offset_top = -320.0
+offset_right = -154.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "    Create New Notes File    "
+
+[node name="upload2" type="Button" parent="." unique_id=108564236]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -262.0
+offset_right = -157.0
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "    Open Notes File (Tres)    "
+
+[node name="FileDialog" type="FileDialog" parent="upload2" unique_id=440172867]
+title = "Open a File"
+content_scale_factor = 0.9
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.tres;Notes File;")
+folder_creation_enabled = false
+favorites_enabled = false
+recent_list_enabled = false
+overwrite_warning_enabled = false
+deleting_enabled = false
+
+[node name="upload" type="Button" parent="." unique_id=413068348]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -204.0
+offset_right = -196.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "    Open mp3/wav/ogg    "
+
+[node name="FileDialog" type="FileDialog" parent="upload" unique_id=764724444]
+title = "Open a File"
+content_scale_factor = 0.9
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.ogg,*.mp3,*.wav;Audio Files;audio/ogg,audio/mp3,audio/wav")
+folder_creation_enabled = false
+favorites_enabled = false
+recent_list_enabled = false
+overwrite_warning_enabled = false
+deleting_enabled = false
+
+[node name="save" type="Button" parent="." unique_id=1672781149]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -147.0
+offset_right = -234.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "    Export Notes File    "
+
+[node name="FileDialog" type="FileDialog" parent="save" unique_id=1228913526]
+title = "Export Notes File"
+content_scale_factor = 0.9
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.tres;Notes File;")
+favorites_enabled = false
+recent_list_enabled = false
+
+[node name="test" type="Button" parent="." unique_id=731758016]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -90.0
+offset_right = -349.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "    Test Song    "
+
+[node name="Label" type="Label" parent="." unique_id=1933174639]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -67.0
+offset_right = 155.0
+offset_bottom = -33.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "0:00 / 0:00"
+
+[node name="play" type="Button" parent="." unique_id=1746269942]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -97.0
+offset_right = 26.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = " Play/Pause "
+
+[node name="add_note" type="Button" parent="." unique_id=998459148]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 446.0
+offset_top = -102.0
+offset_right = 498.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = " Add Note "
+
+[node name="Button" type="OptionButton" parent="add_note" unique_id=1369791384]
+layout_mode = 0
+offset_left = -113.0
+offset_top = 3.0
+offset_right = -14.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 24
+selected = 0
+item_count = 4
+popup/item_0/text = "Right"
+popup/item_0/id = 0
+popup/item_1/text = "Down"
+popup/item_1/id = 1
+popup/item_2/text = "Left"
+popup/item_2/id = 2
+popup/item_3/text = "Up"
+popup/item_3/id = 3
+
+[node name="Panel" type="Panel" parent="." unique_id=1454571352]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 401.0
+offset_right = 1143.0
+offset_bottom = 499.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=2039606637]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 101.0
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1617950246]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 29.0
+offset_right = 1148.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 24
+editable = false
+
+[node name="Label" type="Label" parent="LineEdit" unique_id=480584257]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -25.0
+offset_right = 59.0
+offset_bottom = -2.0
+text = "Editing:"
+
+[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="drag_started" from="HSlider" to="." method="_on_h_slider_drag_started"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="new_song" to="." method="_on_new_song_pressed"]
+[connection signal="pressed" from="upload2" to="." method="_on_upload_2_pressed"]
+[connection signal="confirmed" from="upload2/FileDialog" to="." method="_on_edit_dialog_confirmed"]
+[connection signal="pressed" from="upload" to="." method="_on_button_pressed"]
+[connection signal="confirmed" from="upload/FileDialog" to="." method="_on_file_dialog_confirmed"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="confirmed" from="save/FileDialog" to="." method="_on_save_dialog_confirmed"]
+[connection signal="pressed" from="test" to="." method="_on_test_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="add_note" to="." method="_on_add_note_pressed"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
