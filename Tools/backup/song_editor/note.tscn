@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://duopt6ew2xshj"]
+
+[ext_resource type="Texture2D" uid="uid://b324cvcesg0ly" path="res://arrow_full.png" id="1_doocs"]
+[ext_resource type="Texture2D" uid="uid://dc5i3t8qprkkc" path="res://arrow_sel.png" id="2_wn01w"]
+
+[node name="TextureRect" type="TextureButton" unique_id=498665271]
+offset_right = 20.0
+offset_bottom = 20.0
+pivot_offset = Vector2(10, 10)
+toggle_mode = true
+texture_normal = ExtResource("1_doocs")
+texture_pressed = ExtResource("2_wn01w")
+texture_hover = ExtResource("1_doocs")
+ignore_texture_size = true
+stretch_mode = 5

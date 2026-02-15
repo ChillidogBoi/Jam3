@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://fthm33kvreby"]
+
+[ext_resource type="Texture2D" uid="uid://c4m0hlkb0q1hv" path="res://Art/Developer/card_back.png" id="1_iijuv"]
+[ext_resource type="Script" uid="uid://bgst6fmrilbl8" path="res://Code/Cards/card.gd" id="1_qlk5w"]
+[ext_resource type="Texture2D" uid="uid://bqv7b5klq1vca" path="res://Art/Developer/card_face.png" id="2_qlk5w"]
+
+[node name="Control" type="Control" unique_id=4649960]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 250.0
+mouse_filter = 2
+script = ExtResource("1_qlk5w")
+
+[node name="back" type="TextureRect" parent="." unique_id=899681218]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 250.0
+mouse_filter = 2
+texture = ExtResource("1_iijuv")
+expand_mode = 1
+
+[node name="front" type="TextureRect" parent="." unique_id=654424566]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 250.0
+mouse_filter = 2
+texture = ExtResource("2_qlk5w")
+expand_mode = 1
