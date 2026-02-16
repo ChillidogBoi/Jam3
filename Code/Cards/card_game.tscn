@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ca44m48ekrcel"]
+
+[ext_resource type="Script" uid="uid://ctvl60rgidmv8" path="res://Code/Cards/card_game.gd" id="1_kpphe"]
+[ext_resource type="PackedScene" uid="uid://doxii7qbc0jtv" path="res://Code/Cards/deck.tscn" id="2_drswr"]
+
+[node name="card_game" type="Control" unique_id=389651891]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kpphe")
+
+[node name="Deck" parent="." unique_id=1466817414 instance=ExtResource("2_drswr")]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 378.0
+offset_right = 430.0
+offset_bottom = 628.0
+deck = Array[Vector3]([Vector3(2, 8, 0), Vector3(1, 9, 0), Vector3(0, 10, 0), Vector3(3, 11, 0)])
+
+[node name="Deck2" parent="." unique_id=138745309 instance=ExtResource("2_drswr")]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 16.0
+offset_right = 918.0
+offset_bottom = 266.0
+deck_owner = 1
+deck = Array[Vector3]([Vector3(2, 10, 0), Vector3(2, 9, 0), Vector3(2, 8, 0), Vector3(2, 7, 0), Vector3(2, 6, 0)])
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1283806135]
+position = Vector2(576, 324)

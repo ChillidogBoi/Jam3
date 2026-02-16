@@ -1,10 +1,9 @@
 extends Control
 
 const CARD = preload("uid://fthm33kvreby")
-
 @export_enum("player", "npc") var deck_owner = 0
-
 @export var deck: Array[Vector3]
+
 
 func spawn_deck():
 	for n in deck:

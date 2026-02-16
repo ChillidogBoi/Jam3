@@ -18,6 +18,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wlowb")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1560692368]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
 [node name="HSlider" type="HSlider" parent="." unique_id=349509452]
 layout_mode = 1
 anchors_preset = 12
@@ -360,6 +369,14 @@ max_value = -10.0
 step = 1.0
 value = -10.0
 
+[node name="multiselect" type="ColorRect" parent="." unique_id=378192684]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.003921569, 0.14901961, 0.68235296, 0.29411766)
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="drag_started" from="HSlider" to="." method="_on_h_slider_drag_started"]
 [connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
