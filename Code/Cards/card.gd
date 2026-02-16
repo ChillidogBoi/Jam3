@@ -1,6 +1,6 @@
 extends Control
 
-
+@export var image: int
 @export var value: int
 @export_enum("Buy -> Get", "% Off", "$ Off", "Voucher") var suit: int
 

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dorw6gfbg3vqv"]
+
+[ext_resource type="Script" uid="uid://cd1smkd00kwu7" path="res://score.gd" id="1_t1x8i"]
+
+[node name="score" type="Label" unique_id=1265998755]
+visible = false
+offset_left = 791.0
+offset_top = 207.0
+offset_right = 878.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Great"
+script = ExtResource("1_t1x8i")

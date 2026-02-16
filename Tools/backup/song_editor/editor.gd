@@ -97,7 +97,12 @@ func _on_add_note_pressed():
 func place_note_vis(type:int, time:float):
 	var c = NOTE.instantiate()
 	$Panel.add_child(c)
-	c.rotation = PI/2 * type
+	c.texture_normal = c.texture_normal.duplicate()
+	c.texture_pressed = c.texture_pressed.duplicate()
+	c.texture_hover = c.texture_hover.duplicate()
+	c.texture_normal.region.position.x = 32.0 * type
+	c.texture_pressed.region.position.x = 32.0 * type
+	c.texture_hover.region.position.x = 32.0 * type
 	c.position.y = 40
 	c.position.x = ((time/$HSlider.max_value) * $Panel.size.x) - 5
 	c.pressed.connect(erase_note.bind(c, time))
@@ -156,6 +161,8 @@ func _on_edit_dialog_confirmed():
 		$HSlider.value = 0.0
 		$Label.text = str($HSlider.value, "s / ", $HSlider.max_value,"s")
 		$HSlider.editable = true
+	$LineEdit.text = current_song.song_name
+	$LineEdit.editable = true
 	for n in current_song.note_list:
 		place_note_vis(n.x, n.y)
 
@@ -203,3 +210,30 @@ func _on_delete_pressed():
 
 func _on_h_scroll_bar_value_changed(value):
 	$Panel.position.x = -value
+
+
+func _on_change_note_pressed():
+	if not sel_note: return
+	for n in current_song.note_list:
+		if n.y == sel_time: n.x = $add_note/Button.selected
+	sel_note.texture_normal = sel_note.texture_normal.duplicate()
+	sel_note.texture_pressed = sel_note.texture_pressed.duplicate()
+	sel_note.texture_hover = sel_note.texture_hover.duplicate()
+	sel_note.texture_normal.region.position.x = 32.0 * $add_note/Button.selected
+	sel_note.texture_pressed.region.position.x = 32.0 * $add_note/Button.selected
+	sel_note.texture_hover.region.position.x = 32.0 * $add_note/Button.selected
+
+
+func _on_spin_box_1_value_changed(value):
+	detection_change(1, value)
+func _on_spin_box_2_value_changed(value):
+	detection_change(2, value)
+func _on_spin_box_3_value_changed(value):
+	detection_change(3, value)
+
+func detection_change(variant:int, value:float):
+	if not current_song: return
+	match variant:
+		1: current_song.detection.x = value
+		2: current_song.detection.y = value
+		3: current_song.detection.z = value

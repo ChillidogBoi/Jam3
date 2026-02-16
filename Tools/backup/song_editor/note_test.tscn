@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://b324cvcesg0ly" path="res://arrow_full.png" id="1_mvxx2"]
 [ext_resource type="Script" uid="uid://2ig1ktxmyvdt" path="res://note_test.gd" id="2_dxx37"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxx37"]
+atlas = ExtResource("1_mvxx2")
+region = Rect2(0, 0, 32, 0)
+
 [node name="TextureRect2" type="Control" unique_id=453681421]
 layout_mode = 3
 anchors_preset = 0
@@ -13,9 +17,9 @@ script = ExtResource("2_dxx37")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=505613748]
 layout_mode = 0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_right = 80.0
+offset_bottom = 80.0
 pivot_offset = Vector2(60, 60)
-texture = ExtResource("1_mvxx2")
+texture = SubResource("AtlasTexture_dxx37")
 expand_mode = 1
 stretch_mode = 5

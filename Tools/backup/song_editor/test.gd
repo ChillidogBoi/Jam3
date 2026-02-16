@@ -1,6 +1,7 @@
 extends Control
 
 const NOTE = preload("uid://bgfuwvssv460k")
+const SCORE = preload("uid://dorw6gfbg3vqv")
 var current_song: song
 var time_elapsed = 0
 var notes_sent = 0
@@ -11,8 +12,6 @@ func _ready():
 	current_song = global.current_song
 	$Label.text = current_song.song_name
 	$AudioStreamPlayer.stream = current_song.audio_track
-	$Label2.text = "3"
-	await get_tree().create_timer(1).timeout
 	$Label2.text = "2"
 	await get_tree().create_timer(1).timeout
 	$Label2.text = "1"
@@ -32,7 +31,7 @@ func note_creation(delta):
 	if current_song.note_list[notes_sent].y <= time_elapsed:
 		c = NOTE.instantiate()
 		$Note_Control.add_child(c)
-		c.get_child(0).rotation = PI/2 * current_song.note_list[notes_sent].x
+		c.get_child(0).texture.region.position.x = 32 * current_song.note_list[notes_sent].x
 		match current_song.note_list[notes_sent].x:
 			0.0: c.direction = "right"
 			1.0: c.direction = "down"
@@ -56,20 +55,23 @@ func input_detection(delta):
 		note.queue_free()
 		return
 	note.position.y = 0
-	$TextureRect/TextureRect.rotation = note.get_child(0).rotation
+	$TextureRect/TextureRect.rotation = PI/2 * (note.get_child(0).texture.region.position.x/32.0)
 	if Input.is_action_just_pressed(note.direction):
-		if abs($TextureRect.global_position.x - note.global_position.x) < 15:
-			$score.text = "Great!"
-			$score.visible = true
-		elif abs($TextureRect.global_position.x - note.global_position.x) < 30:
-			$score.text = "Good!"
-			$score.visible = true
-		elif abs($TextureRect.global_position.x - note.global_position.x) < 50:
-			$score.text = "Okay!"
-			$score.visible = true
+		var s = SCORE.instantiate()
+		add_child(s)
+		if abs($TextureRect.global_position.x - note.global_position.x) < current_song.detection.x:
+			s.text = "Great!"
+			s.visible = true
+		elif abs($TextureRect.global_position.x - note.global_position.x) < current_song.detection.y:
+			s.text = "Good!"
+			s.visible = true
+		elif abs($TextureRect.global_position.x - note.global_position.x) < current_song.detection.z:
+			s.text = "Okay!"
+			s.visible = true
 		else:
-			$score.text = "Boo!"
-			$score.visible = true
+			s.text = "Boo!"
+			s.visible = true
+			return
 		
 		note.queue_free()
 

@@ -229,6 +229,22 @@ popup/item_2/id = 2
 popup/item_3/text = "Up"
 popup/item_3/id = 3
 
+[node name="change_note" type="Button" parent="." unique_id=893615052]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.5
+offset_top = -95.0
+offset_right = 42.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = " Change Note "
+
 [node name="Panel" type="TextureRect" parent="." unique_id=1784520338]
 layout_mode = 0
 offset_left = 12.0
@@ -261,6 +277,78 @@ offset_right = 59.0
 offset_bottom = -2.0
 text = "Editing:"
 
+[node name="accuracy" type="Label" parent="." unique_id=2037579946]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -282.0
+offset_top = 73.0
+offset_right = -37.0
+offset_bottom = 96.0
+grow_horizontal = 0
+text = "Accuracy: Great! / Good! / Okay!"
+
+[node name="Control" type="Control" parent="accuracy" unique_id=2107922778]
+clip_contents = true
+anchors_preset = 0
+offset_left = 82.0
+offset_top = 23.0
+offset_right = 130.0
+offset_bottom = 61.0
+
+[node name="SpinBox" type="SpinBox" parent="accuracy/Control" unique_id=1002256986]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 2.0
+offset_right = 46.5
+offset_bottom = 33.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 99.0
+value = 15.0
+alignment = 2
+
+[node name="Control2" type="Control" parent="accuracy" unique_id=826991132]
+clip_contents = true
+anchors_preset = 0
+offset_left = 142.0
+offset_top = 22.0
+offset_right = 190.0
+offset_bottom = 60.0
+
+[node name="SpinBox" type="SpinBox" parent="accuracy/Control2" unique_id=239963834]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 2.0
+offset_right = 46.5
+offset_bottom = 33.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 99.0
+value = 30.0
+alignment = 2
+
+[node name="Control3" type="Control" parent="accuracy" unique_id=1022891656]
+clip_contents = true
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 21.0
+offset_right = 248.0
+offset_bottom = 59.0
+
+[node name="SpinBox" type="SpinBox" parent="accuracy/Control3" unique_id=1861602816]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 2.0
+offset_right = 46.5
+offset_bottom = 33.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 99.0
+value = 50.0
+alignment = 2
+
 [node name="HScrollBar" type="HScrollBar" parent="." unique_id=1706276037]
 layout_mode = 0
 offset_left = 13.0
@@ -286,6 +374,10 @@ value = -10.0
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="add_note" to="." method="_on_add_note_pressed"]
+[connection signal="pressed" from="change_note" to="." method="_on_change_note_pressed"]
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="value_changed" from="accuracy/Control/SpinBox" to="." method="_on_spin_box_1_value_changed"]
+[connection signal="value_changed" from="accuracy/Control2/SpinBox" to="." method="_on_spin_box_2_value_changed"]
+[connection signal="value_changed" from="accuracy/Control3/SpinBox" to="." method="_on_spin_box_3_value_changed"]
 [connection signal="value_changed" from="HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]

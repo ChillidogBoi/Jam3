@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ccs50di4mbgfr" path="res://test.gd" id="1_8uh7m"]
 [ext_resource type="Texture2D" uid="uid://dj0hua86tjho0" path="res://arrow_empty.png" id="2_6uqi0"]
-[ext_resource type="Script" uid="uid://cd1smkd00kwu7" path="res://score.gd" id="3_6uqi0"]
 
 [node name="Control" type="Control" unique_id=444151955]
 layout_mode = 3
@@ -20,19 +19,18 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -372.0
+offset_left = -172.0
 offset_top = -60.0
-offset_right = -252.0
-offset_bottom = 60.0
+offset_right = -92.0
+offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
-pivot_offset = Vector2(60, 60)
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1474660451]
 layout_mode = 0
-offset_right = 120.0
-offset_bottom = 120.0
-pivot_offset = Vector2(60, 60)
+offset_right = 80.0
+offset_bottom = 80.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_6uqi0")
 expand_mode = 1
 stretch_mode = 5
@@ -42,33 +40,27 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
+offset_left = -220.0
 offset_top = -60.0
+offset_right = -100.0
 offset_bottom = 60.0
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1364170656]
 
 [node name="Label" type="Label" parent="." unique_id=1893732746]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 6.0
-offset_right = 173.0
-offset_bottom = 51.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
+offset_top = 11.0
+offset_right = -13.0
+offset_bottom = 56.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "New Song"
-
-[node name="score" type="Label" parent="." unique_id=376583129]
-visible = false
-layout_mode = 0
-offset_left = 791.0
-offset_top = 207.0
-offset_right = 878.0
-offset_bottom = 252.0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Great"
-script = ExtResource("3_6uqi0")
+horizontal_alignment = 2
 
 [node name="Label2" type="Label" parent="." unique_id=86690314]
 layout_mode = 1
@@ -88,12 +80,11 @@ text = "3"
 
 [node name="Button" type="Button" parent="." unique_id=1487525148]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 1.0
-offset_right = 413.0
-offset_bottom = 54.0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 229.0
+offset_bottom = 60.0
 theme_override_font_sizes/font_size = 32
 text = "Back to Editor"
 
-[connection signal="visibility_changed" from="score" to="score" method="_on_visibility_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
